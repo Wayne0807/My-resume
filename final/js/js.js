@@ -1,5 +1,3 @@
-const DEV_MODE = false;
-
 //取得canvas畫布元素，並取得2D渲染環境，進行2D繪圖
 //querySelector(CSS的ID選擇語法)，選擇html的element
 const stage = document.createElement('canvas'),
@@ -69,12 +67,7 @@ Ship.prototype.update = function(x) {
 Ship.prototype.draw = function() {
     //暫存
     ctx.save();
-    /*
-    if (DEV_MODE) {
-        ctx.fillStyle = 'skyblue';
-        ctx.fillRect(this.x, this.y, this.width, this.width);
-    }
-    */
+
     //用四個矩形畫出戰艦
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x + this.radius - 5, this.y, 10, this.radius);
@@ -170,12 +163,7 @@ Enemy.prototype.update = function(x, y) {
 
 //畫隕石
 Enemy.prototype.draw = function() {
-    /*
-    if (DEV_MODE) {
-        ctx.fillStyle = 'skyblue';
-        ctx.fillRect(this.x, this.y, this.width, this.width);
-    }
-    */
+
     ctx.save();
     ctx.fillStyle = this.color;
     ctx.beginPath();
@@ -208,12 +196,7 @@ items.prototype.update = function(x, y) {
 
 //畫道具
 items.prototype.draw = function() {
-    /*
-    if (DEV_MODE) {
-        ctx.fillStyle = 'skyblue';
-        ctx.fillRect(this.x, this.y, this.width, this.width);
-    }
-    */
+
     ctx.save();
     ctx.fillStyle = this.color;
     ctx.beginPath();
@@ -246,12 +229,7 @@ double.prototype.update = function(x, y) {
 
 //畫double分數道具
 double.prototype.draw = function() {
-    /*
-    if (DEV_MODE) {
-        ctx.fillStyle = 'skyblue';
-        ctx.fillRect(this.x, this.y, this.width, this.width);
-    }
-    */
+
     ctx.save();
     ctx.fillStyle = this.color;
     ctx.beginPath();
@@ -316,6 +294,7 @@ function handleShipCollision() {
                     enemySeedFrameInterval = 100;
                     score = 0;
                     scoreNode.textContent = score;
+
                 }, 2000);
             }
         }
@@ -479,7 +458,7 @@ function render(delta) {
 
         // 宇宙背景設定
         ctx.save();
-        ctx.fillStyle = '#222222';
+        ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, stage.width, stage.height);
         ctx.restore();
 
@@ -523,6 +502,7 @@ function render(delta) {
 //開始遊戲
 function startGame(e) {
     //隱藏屏幕、顯示計分條
+    //$("dialogue").addclass("dialogue--hidden");
     dialogue.classList.add('dialogue--hidden');
     hud.classList.remove('hud--hidden');
     e.currentTarget.blur();
