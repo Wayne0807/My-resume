@@ -153,6 +153,9 @@ button:hover {
     margin: 0;
 }
 
+
+/* 利用jquery改變開始畫面文字顏色 */
+
 .textcolor {
     color: #ff9d00;
 }
