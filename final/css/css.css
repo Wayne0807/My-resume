@@ -153,3 +153,7 @@ button:hover {
 .hud__score {
     margin: 0;
 }
+
+.textcolor {
+    color: #ff9d00;
+}
