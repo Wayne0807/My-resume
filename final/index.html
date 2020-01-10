@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- 引用自已定義的CSS -->
-    <link rel="stylesheet" href="./css/css.css">
+    <link rel="stylesheet" href="./css.css">
     <title>期末專題 宇宙戰艦歷險</title>
 </head>
 
@@ -24,10 +24,14 @@
     <ul class="hud hud--hidden">
         <li class="hud__score">分數： <span>0</span></li>
     </ul>
-    <!-- 引用jquery -->
-    <script src='//code.jquery.com/jquery-2.1.4.min.js'></script>
+    <!-- 引用jquery，進行開始畫面文字顏色的改變 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+
+    <script>
+        $('ul li').addClass('textcolor');
+    </script>
     <!-- 引用自己寫的 js -->
-    <script src="./js/js.js"></script>
+    <script src="./js.js"></script>
 </body>
 
 </html>
